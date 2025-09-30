@@ -1307,3 +1307,340 @@ input::-webkit-slider-thumb {
     margin: -20px 0 30px 0;
   }
 }
+
+/*--------------------------------------------------------------
+# Dark Mode Styles
+--------------------------------------------------------------*/
+
+/* CSS Variables untuk Light Mode (Default) */
+/*--------------------------------------------------------------
+# Dark Mode Styles
+--------------------------------------------------------------*/
+
+/* CSS Variables untuk Light Mode (Default) */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5ff;
+  --bg-header: #079DD9;
+  --text-primary: #444444;
+  --text-secondary: #000000;
+  --text-white: #ffffff;
+  --color-primary: #079DD9;
+  --color-secondary: #E16926;
+  --border-color: #079DD9;
+  --card-bg: #ffffff;
+  --footer-bg: #ffffff;
+  --wave-1: rgba(255, 255, 255, 0.1);
+  --wave-2: rgba(255, 255, 255, 0.2);
+  --wave-3: #ffffff;
+}
+
+/* CSS Variables untuk Dark Mode */
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --bg-header: #0b2f3b;
+  --text-primary: #e0e0e0;
+  --text-secondary: #ffffff;
+  --text-white: #ffffff;
+  --color-primary: #127C99;
+  --color-secondary: #ff8c52;
+  --border-color: #4db8e8;
+  --card-bg: #2d2d2d;
+  --footer-bg: #1a1a1a;
+  --wave-1: rgba(0, 0, 0, 0.2);
+  --wave-2: rgba(0, 0, 0, 0.3);
+  --wave-3: #121212;
+}
+
+/* Smooth transition untuk semua elemen */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* General Body */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Header */
+#header {
+  background: var(--bg-primary);
+}
+
+#header.header-scrolled {
+  background: var(--bg-header);
+}
+
+/* Hero Section */
+#hero:before {
+  background: var(--color-primary);
+}
+
+/* Sections */
+.section-bg {
+  background-color: var(--bg-secondary);
+}
+
+.section-title h2,
+.talent .talent-title h2,
+.testi-title h2 {
+  color: var(--color-secondary);
+}
+
+.section-title p,
+.talent .talent-title p,
+.testi-title p {
+  color: var(--text-secondary);
+}
+
+/* Work Section */
+.work .single-work .serial span {
+  color: var(--color-primary);
+}
+
+.work .single-work h3 {
+  color: var(--color-secondary);
+}
+
+.work .single-work p {
+  color: var(--text-secondary);
+}
+
+/* About Section */
+.about .content h3 {
+  color: var(--color-secondary);
+}
+
+.about .content p {
+  color: var(--text-primary);
+}
+
+/* Counts Section */
+.counts {
+  background: var(--color-primary);
+}
+
+/* Talent Section */
+.wrapper {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+.wrapper .slide-value {
+  color: var(--text-primary);
+}
+
+.proses button,
+.reset button {
+  background-color: var(--color-primary);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .reset button {
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+}
+
+.help-icon::after {
+  background-color: var(--color-primary);
+}
+
+/* Partner Section */
+.partner {
+  background: var(--color-primary);
+}
+
+.logos {
+  background: var(--color-primary);
+}
+
+.logos:before {
+  background: linear-gradient(to left, rgba(255, 84, 84, 0), var(--color-primary));
+}
+
+.logos:after {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--color-primary));
+}
+
+/* Testimonials */
+.testimonials {
+  background: var(--bg-primary);
+}
+
+.testimonials .testimonial-item {
+  color: var(--text-secondary);
+}
+
+.testimonials .testimonial-item h3,
+.testimonials .testimonial-item h4 {
+  color: var(--text-secondary);
+}
+
+.testimonials .testimonial-item p {
+  color: var(--text-primary);
+}
+
+/* Contact Section */
+.contact {
+  background: var(--color-primary);
+}
+
+.contact .email-form input,
+.contact .email-form textarea {
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .contact .email-form input,
+[data-theme="dark"] .contact .email-form textarea {
+  background-color: #3d3d3d;
+}
+
+.contact .email-form input::placeholder,
+.contact .email-form textarea::placeholder {
+  color: var(--text-primary);
+  opacity: 0.6;
+}
+
+/* Footer */
+#footer {
+  background: var(--color-primary);
+}
+
+#footer .footer-top {
+  background: var(--footer-bg);
+}
+
+#footer .footer-top .footer-info {
+  background: var(--color-primary);
+}
+
+#footer .footer-top h4 {
+  color: var(--color-primary);
+}
+
+#footer .footer-top .footer-links ul a {
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] #footer .footer-top h4 {
+  color: var(--color-secondary);
+}
+
+[data-theme="dark"] #footer .footer-top .footer-links ul a {
+  color: var(--text-primary);
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 80px;
+  right: 15px;
+  z-index: 996;
+  background: var(--color-primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.4s;
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode-toggle:hover {
+  background: var(--color-secondary);
+  transform: scale(1.1);
+}
+
+.dark-mode-toggle i {
+  font-size: 20px;
+  color: var(--text-white);
+  line-height: 0;
+}
+
+/* Animasi untuk icon */
+.dark-mode-toggle i {
+  transition: transform 0.3s ease;
+}
+
+.dark-mode-toggle:hover i {
+  transform: rotate(20deg);
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  background-color: var(--bg-secondary);
+}
+
+.wave3 {
+  fill: var(--wave-3);
+}
+
+.wave1 {
+  fill: var(--wave-1);
+}
+
+.wave2 {
+  fill: var(--wave-2);
+}
+/* Card Images */
+.card-img-top {
+  border-color: var(--border-color);
+}
+
+/* SweetAlert Dark Mode */
+[data-theme="dark"] .swal2-popup {
+  background-color: #2d2d2d !important;
+  color: #e0e0e0 !important;
+}
+
+[data-theme="dark"] .swal2-title {
+  color: #e0e0e0 !important;
+}
+
+[data-theme="dark"] .swal2-html-container {
+  color: #e0e0e0 !important;
+}
+
+/* Mobile Nav Dark Mode */
+[data-theme="dark"] .navbar-mobile {
+  background: #1a1a1a;
+}
+
+[data-theme="dark"] .navbar-mobile ul {
+  background-color: var(--bg-header);
+}
+
+/* Preloader Dark Mode */
+[data-theme="dark"] #preloader {
+  background: #1a1a1a;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  background: var(--color-primary);
+}
+
+.back-to-top:hover {
+  background: var(--color-secondary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dark-mode-toggle {
+    bottom: 70px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .dark-mode-toggle i {
+    font-size: 18px;
+  }
+}
